@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Farming Planet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="interface.css">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        
+            <a class="navbar-left hidden-xs hidden-sm" href="#"><img src="images/banner.png" style="height: 55px;"></a>
+            <p class="navbar-text navbar-left hidden-xs hidden-sm" id="navbrand">Farming Planet</p>
+            <p class="navbar-text" id="navbrand">Cash: $<span id="cash">10</span></p>
+            
+        </div>
+       
+        <div class="nav-disappear" id="test">
+            <ul class="nav nav-tabs">
+              <li class="dropdown active">
+                <a class="dropdown-toggle" id="navbutton" data-toggle="dropdown" href="#">
+                <span class="glyphicon glyphicon-align-justify"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="navbar-btn"><a data-toggle="tab" href="#home" id="navbutton">Home</a></li>
+                    <li class="navbar-btn"><a data-toggle="tab" href="#crops" id="navbutton">Crops</a></li>
+                    <li class="navbar-btn"><a data-toggle="tab" href="#staff" id="navbutton">Staff</a></li>
+                    <li class="navbar-btn"><a data-toggle="tab" href="#upgrades" id="navbutton">Upgrades</a></li>
+                    <li class="navbar-btn"><a data-toggle="tab" href="#research" id="navbutton">Research</a></li>
+                    <li class="navbar-btn"><a data-toggle="tab" href="#settings" id="navbutton">Settings</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>  
+        
+        <div class="navbar-right head-nav tab-disappear">
+             
+            <ul class="nav nav-tabs nav-tabs-horizontal" data-tabs="tabs" id="nav-tabs-wrapper">
+                <li class="active navbar-btn"><a data-toggle="tab" href="#home" id="navbutton">Home</a></li>
+                <li class="navbar-btn"><a data-toggle="tab" href="#crops" id="navbutton">Crops</a></li>
+                <li class="navbar-btn"><a data-toggle="tab" href="#staff" id="navbutton">Staff</a></li>
+                <li class="navbar-btn"><a data-toggle="tab" href="#upgrades" id="navbutton">Upgrades</a></li>
+                <li class="navbar-btn"><a data-toggle="tab" href="#research" id="navbutton">Research</a></li>
+                <li class="navbar-btn"><a data-toggle="tab" href="#settings" id="navbutton">Settings</a></li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+    
+<div class="container" style="margin-top:100px;">
+
+    
+    <div id="tab-content" class="tab-content">
+        
+        <!-- Start of Home tab-->
+        <div id="home" class="tab-pane in active fade">
+            <h1 style="text-align: center;">Welcome!</h1>
+            <p style="text-align:center; font-size:150%; background-color: rgba(0, 0, 0, 0.4);">You are a farmer that has just landed on a newly discovered exoplanet. This planet is entirely yours to do with as you please. There is an incredible amount of fertile land to grow crops, as well as plenty of space for future expansion and development. You will start out with some crops that you have brought with you from Earth. Perhaps in the future you can discover new crops that have yet to be found. Unfortunately, you spent your entire life savings to get here. All you have left is $10 and your drive to own the very best farming planet! To get started, begin tilling some land and plant your very first crop. You're sure to make your savings back in no time! Good luck!</p>
+            <p style="margin-top: 100px; text-align:center; font-size:150%; background-color: rgba(0, 0, 0, 0.4);">I would like to give a special thanks to Rose for creating all of the pixel art used in the game!</p>
+        </div>
+        
+        <!-- Start of Crops tab-->
+        <div id="crops" class="tab-pane fade">
+            
+            <div class="row" style>
+                <button style="margin-top: 12px;" type="button" class=" col-lg-1 btn btn-lg btn-info col-lg-offset-4" onClick="tillLand(1)">Till Land</button>
+                <h2 class="col-lg-7" >Available Land: <span id="land">0</span></h2>    
+            </div>
+            
+            <div id="scrollable-window">
+                
+            <!--Wheat Tab-->
+                <button data-toggle="collapse" data-target="#wheat-collapse" class="btn btn-block btn-info" id="span-button">Wheat</button>
+                <div id="wheat-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p>Wheat! This is how we get all our delicious bread. Just be sure to keep it out of the sun or it might get too toasty! Each wheat crop will generate $<span id="wheat-value">1</span> per second.</p>
+                        <p>You own <span id="wheat">0</span> wheat crops.</p>
+                        <p>Cost of next Wheat crop: $<span id="wheat-cost">10</span> and 5 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyWheat()">Buy <img src="images/wheat.png"></button>
+                    </div>
+                </div>
+                
+            <!--Potatoes Tab -->
+                <button data-toggle="collapse" data-target="#potatoes-collapse" class="btn btn-block btn-info" id="span-button">Potatoes</button>
+                <div id="potatoes-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p>Potatoes! They actually make very good detectives because they always keep their eyes peeled. Each potato crop will generate $<span id="potatoes-value">5</span> per second.</p>
+                        <p>You own <span id="potatoes">0</span> potato crops.</p>
+                        <p>Cost of next Potato crop: $<span id="potatoes-cost">100</span> and 10 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyPotatoes()">Buy<img src="images/potato.png"></button>
+                    </div>
+                </div>
+                
+            <!--Carrots Tab -->    
+                <button data-toggle="collapse" data-target="#carrots-collapse" class="btn btn-block btn-info" id="span-button">Carrots</button>
+                <div id="carrots-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> Many people don't like carrots, but let the haters hate. We don't carrot all. Each carrot crop will generate $<span id="potatoes-value">10</span> per second.</p>
+                        <p>You own <span id="carrots">0</span> carrot crops.</p>
+                        <p>Cost of next Carrot crop: $<span id="carrots-cost">500</span> and 25 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyCarrots()">Buy<img src="images/carrot.png"></button>
+                    </div>
+                </div>
+                
+            <!--Cabbage Tab-->    
+                <button data-toggle="collapse" data-target="#cabbage-collapse" class="btn btn-block btn-info" id="span-button">Cabbage</button>
+                <div id="cabbage-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> Cabbage comes in both green and purple variety. Two heads are better than one after all! Each cabbage crop will generate $<span id="cabbage-value">25</span> per second.</p>
+                        <p>You own <span id="cabbage">0</span> cabbage crops.</p>
+                        <p>Cost of next Cabbage crop: $<span id="cabbage-cost">3000</span> and 50 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyCabbage()">Buy<img src="images/cabbage.png"></button>
+                    </div>
+                </div>
+                
+            <!--Corn Tab-->
+                <button data-toggle="collapse" data-target="#corn-collapse" class="btn btn-block btn-info" id="span-button">Corn</button>
+                <div id="corn-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> Be careful what you say in front of this crop. Corn is all ears! Each corn crop will generate $<span id="cabbage-value">75</span> per second.</p>
+                        <p>You own <span id="corn">0</span> corn crops.</p>
+                        <p>Cost of next Corn crop: $<span id="corn-cost">10000</span> and 100 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyCorn()">Buy<img src="images/corn.png"></button>
+                    </div>
+                </div>
+                
+            <!--Cucumber Tab-->
+                <button data-toggle="collapse" data-target="#cucumber-collapse" class="btn btn-block btn-info" id="span-button">Cucumbers</button>
+                <div id="cucumber-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> Cucumbers! Good for those who want to make their own pickles. It's kind of a big dill. Each cucumber crop will generate $<span id="cucumber-value">200</span> per second.</p>
+                        <p>You own <span id="cucumber">0</span> cucumber crops.</p>
+                        <p>Cost of next Cucumber crop: $<span id="cucumber-cost">40000</span> and 250 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyCucumber()">Buy<img src="images/cucumber.png"></button>
+                    </div>
+                </div>
+                
+            <!--Turnip Tab -->
+                <button data-toggle="collapse" data-target="#turnip-collapse" class="btn btn-block btn-info" id="span-button">Turnips</button>
+                <div id="turnip-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> If these go missing, don't worry too much. They always turnip eventually! Each turnip crop will generate $<span id="turnip-value">800</span> per second.</p>
+                        <p>You own <span id="turnip">0</span> turnip crops.</p>
+                        <p>Cost of next Turnip crop: $<span id="turnip-cost">200000</span> and 1000 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyTurnip()">Buy<img src="images/turnip.png"></button>
+                    </div>
+                </div>
+                
+            <!--Pepper Tab-->
+                <button data-toggle="collapse" data-target="#pepper-collapse" class="btn btn-block btn-info" id="span-button">Peppers</button>
+                <div id="pepper-collapse" class="collapse">
+                    <div id="collapse-content">
+                        <p> These tend to be a little nosey. They like to get jalapeño business! Each pepper crop will generate $<span id="turnip-value">6000</span> per second.</p>
+                        <p>You own <span id="pepper">0</span> pepper crops.</p>
+                        <p>Cost of next Pepper crop: $<span id="pepper-cost">1500000</span> and 5000 Land</p>
+                        <button type="button" class="btn btn-info btn-lg" onClick="buyPepper()">Buy<img src="images/pepper.png"></button>
+                    </div>
+                </div>
+                
+         </div> <!-- End of Crops-scroll -->
+    </div>
+    <!--End of Crops tab-->
+        
+        <!-- Start of Staff tab-->
+          <div id="staff" class="tab-pane fade">
+                
+              <h2 style="text-align: center;">Current Staff: <span id="current-staff">0</span>/<span id="staff-cap">0</span></h2>
+              
+              <div id="scrollable-window">
+                    
+                    <button data-toggle="collapse" data-target="#facility-collapse" class="btn btn-block btn-info" id="span-button">Facility</button>
+                    <div id="facility-collapse" class="collapse">
+                        <div id="collapse-content">
+                            <p>Facilities are required to house your staff. Each facility will allow you to have 10 additional staff members.</p>
+                            <p>You have <span id="facilities">0</span> facilities.</p>
+                            <p>Cost of next Facility: $<span id="facility-cost">50000</span></p>
+                            <button type="button" class="btn btn-info btn-lg" onClick="buyFacility()">Buy Facility</button>
+                        </div>
+                    </div>
+                    
+                    <button data-toggle="collapse" data-target="#tiller-collapse" class="btn btn-block btn-info" id="span-button">Tiller</button>
+                    <div id="tiller-collapse" class="collapse">
+                        <div id="collapse-content">
+                            <p>Tillers are workers that will automatically till land for you! Each tiller will till <span id="tiller-power">1</span> land per second.</p>
+                            <p>You have <span id="tillers">0</span> tillers.</p>
+                            <p>Each tiller costs $<span id="tiller-cost">300</span> per second.</p>
+                            <button type="button" class="btn btn-info btn-lg" onClick="hireTiller()">Hire Tiller</button>
+                            <button type="button" class="btn btn-danger btn-lg" onClick="fireTiller()">Fire Tiller</button>
+                        </div>
+                    </div>
+              
+                </div>
+              
+              
+            </div>
+        <!--End of Staff tab-->
+        
+        <!-- Start of Upgrades tab-->
+            <div id="upgrades" class="tab-pane fade">
+                <div id="scrollable-window">
+                    
+                    <!--Till Land Upgrades-->
+                    <button data-toggle="collapse" data-target="#till-upgrades" class="btn btn-block btn-info" id="span-button">Till Land Upgrades</button>
+                    <div id="till-upgrades" class="collapse">
+                        <div id="collapse-content">
+                            <div id="iron-hoe">
+                                <h3>Iron Hoe</h3>
+                                <p>The iron hoe. A basic tool that will allow you to till 1 additional land at a time! This costs $3000</p>
+                                <button id="buy-iron-hoe" type="button" class="btn btn-info btn-lg" onClick="buyIronHoe()">Buy Iron Hoe</button>
+                            </div>
+                            
+                            <div id="bronze-hoe">
+                                <h3>Bronze Hoe</h3>
+                                <p>An upgraded hoe that will allow you to till 1 additional land at a time! This costs $10000</p>
+                                <button id="buy-bronze-hoe" type="button" class="btn btn-info btn-lg" onClick="buyBronzeHoe()">Buy Bronze Hoe</button>
+                            </div>
+                            
+                            <div id="steel-hoe">
+                                <h3>Steel Hoe</h3>
+                                <p>An even higher quality hoe that will allow you to till 2 additional land at a time! This costs $50000</p>
+                                <button id="buy-steel-hoe" type="button" class="btn btn-info btn-lg" onClick="buySteelHoe()">Buy Steel Hoe</button>
+                            </div>
+                            
+                            <div id="iron-plow">
+                                <h3>Iron Plow</h3>
+                                <p>A plow is much more efficient at tilling the land than your basic hoe and will allow you to till 4 additional land at a time! This costs $150000</p>
+                                <button id="buy-iron-plow" type="button" class="btn btn-info btn-lg" onClick="buyIronPlow()">Buy Iron Plow</button>
+                            </div>
+                            
+                            <div id="bronze-plow">
+                                <h3>Bronze Plow</h3>
+                                <p>An upgraded plow that will allow you to till 6 additional land at a time! This costs $400000</p>
+                                <button id="buy-bronze-plow" type="button" class="btn btn-info btn-lg" onClick="buyBronzePlow()">Buy Bronze Plow</button>
+                            </div>
+                            
+                            <div id="steel-plow">
+                                <h3>Steel Plow</h3>
+                                <p>An even higher quality plow that will allow you to till 10 additional land at a time! This costs $1000000</p>
+                                <button id="buy-steel-plow" type="button" class="btn btn-info btn-lg" onClick="buySteelPlow()">Buy Steel Plow</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        <!--End of Upgrades tab-->
+        
+        <!-- Start of Research tab-->
+          <div id="research" class="tab-pane fade">
+            <h3>Research(WIP)</h3>
+            <p>Some research.</p>
+            </div>
+        <!--End of Research tab-->
+        
+        <!-- Start of Settings tab-->
+          <div id="settings" class="tab-pane fade">
+            <h3>Settings(WIP)</h3>
+            
+              <button type="buton" class="btn btn-danger btn-lg" data-toggle="confirmation" data-content="This will delete all progress and start a fresh save! Are you sure you want to do this?" data-title="STOP RIGHT THERE!" data-placement="bottom" data-btn-ok-class="btn-success" data-btn-cancel-class="btn-danger" data-btn-ok-label="Yes, delete it!" data-btn-cancel-label="No, keep it!" data-on-confirm="deleteSave">Delete Save Data</button>
+            </div>
+        <!--End of Settings tab-->
+        
+    </div> <!-- End of tabs content-->
+    
+</div>
+    
+ 
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-confirmation.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+window.onload = load; 
+</script>
+    
+</body>
+
+</html>

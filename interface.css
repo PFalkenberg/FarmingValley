@@ -1,0 +1,123 @@
+@media screen and (min-width: 768px) {
+.nav-disappear {
+    display: none !important;
+    }
+}    
+
+@media screen and (max-width: 768px) {
+.tab-disappear {
+    display: none !important;
+    }
+}
+
+
+h1{
+	color: #FFF;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size:550%;
+	font-family: 'Abril Fatface', cursive;
+}
+
+h2{
+	color: #FFF;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h3{
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+    font-family: 'Abril Fatface', cursive;
+}
+
+p{
+	color: #FFF;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+body{
+	background-image:url("images/background.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#navbar{
+    background-color: #0000b7;
+}
+
+#banner{
+	background-image:url("images/banner.png");
+	height: 350px;
+	background-size:100%;
+}
+
+#navbrand{
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-left: 10px;
+    font-size:125%;
+    max-width: 200px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    color: #555555;
+    background-color:   #5bc0de;  
+} 
+
+.nav>li {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-menu{
+    background-color: #006cff;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #0260e0;
+}
+
+#test{
+       
+    display:inline-block;   
+}
+
+
+#navbutton{
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#span-button{
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-top: 10px;
+}
+
+#scrollable-window{
+    background-color: rgba(0, 0, 0, 0.5);
+    height:400px;
+    width: auto;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+#collapse-content{
+    text-align: center;
+    
+}
+
+#confirmation-content{
+    color: black;
+    text-shadow: none;
+}
+
+#confirmation-title{
+    color: black;
+    text-shadow: none;
+}
